@@ -9,7 +9,8 @@ const FormWrapper = styled.form`
   display: flex;
   justify-content: space-around;
   text-align: center;
-  width: 30vw;
+  width: 50vw;
+  margin: 0 auto;
 `;
 
 type FormType = {
@@ -22,10 +23,16 @@ type FormType = {
 const Form = ({ event, onInputChange, onSubmit }: FormType) => {
   return (
     <FormWrapper onSubmit={onSubmit}>
-      <EventInput onChange={onInputChange} id="name" value={event.name} />
+      <EventInput
+        onChange={onInputChange}
+        id="name"
+        label="Event: "
+        value={event.name}
+      />
       <EventTextarea
         onChange={onInputChange}
         id="description"
+        label="Description: "
         value={event.description}
       />
       <AddEventButton />

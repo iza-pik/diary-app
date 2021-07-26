@@ -2,14 +2,12 @@ import React from "react";
 
 type EventTextareaType = React.HTMLProps<HTMLTextAreaElement>;
 
-const EventTextarea = ({ onChange, value, id }: EventTextareaType) => {
+const EventTextarea = ({ label, ...textareaProps }: EventTextareaType) => {
   return (
-    <textarea
-      id={id}
-      onChange={onChange}
-      placeholder="Enter description"
-      value={value}
-    />
+    <>
+      {label && <label htmlFor={textareaProps.id}>{label}</label>}
+      <textarea placeholder="Enter description" {...textareaProps} />
+    </>
   );
 };
 

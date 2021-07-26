@@ -3,15 +3,12 @@ import React from "react";
 type EventInputType = React.HTMLProps<HTMLInputElement> &
   React.HTMLProps<HTMLTextAreaElement>;
 
-const EventInput = ({ onChange, value, id }: EventInputType) => {
+const EventInput = ({ label, ...inputProps }: EventInputType) => {
   return (
-    <input
-      id={id}
-      type="text"
-      onChange={onChange}
-      placeholder="Enter event"
-      value={value}
-    />
+    <>
+      {label && <label htmlFor={inputProps.id}>{label}</label>}
+      <input type="text" placeholder="Enter event" {...inputProps} />
+    </>
   );
 };
 
