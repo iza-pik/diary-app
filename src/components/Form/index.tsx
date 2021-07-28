@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { eventType } from "../App";
-import AddEventButton from "./AddEventButton";
-import EventInput from "./EventInput";
-import EventTextarea from "./EventTextarea";
+import { eventType } from "../../App";
+import AddEventButton from "./../AddEventButton";
+import EventInput from "./../EventInput";
+import EventTextarea from "./../EventTextarea";
 
 const FormWrapper = styled.form`
   display: flex;
